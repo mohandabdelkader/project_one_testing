@@ -16,6 +16,7 @@ public class HomePage {
     private final By checkBoxesLink = By.linkText("Checkboxes");
     private final By dynamicLoadingLink = By.partialLinkText("Loading");
     private final By dropDownListLink=By.linkText("Dropdown");
+    private final By statusCodeLink=By.linkText("Status Codes");
 
     // Action
     public LoginPage clickOnFormAuthLink() {
@@ -40,5 +41,9 @@ public class HomePage {
     public DropDownPage clickOnDropDownLink(){
         driver.findElement(dropDownListLink).click();
         return new DropDownPage(driver);
+    }
+    public StatusCodesPage clickOnStatusCodeLink(){
+        driver.findElement(statusCodeLink).click();
+        return new StatusCodesPage(driver);
     }
 }
