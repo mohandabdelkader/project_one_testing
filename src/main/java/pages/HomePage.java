@@ -15,35 +15,50 @@ public class HomePage {
     private final By forgetPasswordLink = By.linkText("Forgot Password");
     private final By checkBoxesLink = By.linkText("Checkboxes");
     private final By dynamicLoadingLink = By.partialLinkText("Loading");
-    private final By dropDownListLink=By.linkText("Dropdown");
-    private final By statusCodeLink=By.linkText("Status Codes");
+    private final By dropDownListLink = By.linkText("Dropdown");
+    private final By statusCodeLink = By.linkText("Status Codes");
+    private final By javascriptAlertsLink = By.cssSelector("a[href='/javascript_alerts']");
 
     // Action
+
+    // Helper Method
+    private void clickOnLink(By locator) {
+        driver.findElement(locator).click();
+    }
+
     public LoginPage clickOnFormAuthLink() {
-        driver.findElement(formAuthLink).click();
+        clickOnLink(formAuthLink);
         return new LoginPage(driver);
     }
 
     public ForgetPasswordPage clickOnForgetPasswordLink() {
-        driver.findElement(forgetPasswordLink).click();
+        clickOnLink(forgetPasswordLink);
         return new ForgetPasswordPage(driver);
     }
 
     public CheckBoxesPage clickOnCheckBoxesLink() {
-        driver.findElement(checkBoxesLink).click();
+        clickOnLink(checkBoxesLink);
         return new CheckBoxesPage(driver);
     }
 
     public DynamicLoadingPage clickOnDynamicLoadingLink() {
-        driver.findElement(dynamicLoadingLink).click();
+        clickOnLink(dynamicLoadingLink);
         return new DynamicLoadingPage(driver);
     }
-    public DropDownPage clickOnDropDownLink(){
-        driver.findElement(dropDownListLink).click();
+
+    public DropDownPage clickOnDropDownLink() {
+        clickOnLink(dropDownListLink);
         return new DropDownPage(driver);
     }
-    public StatusCodesPage clickOnStatusCodeLink(){
-        driver.findElement(statusCodeLink).click();
+
+    public StatusCodesPage clickOnStatusCodeLink() {
+        clickOnLink(statusCodeLink);
         return new StatusCodesPage(driver);
     }
+
+    public AlertJSPage clickOnAlertJsLink() {
+        clickOnLink(javascriptAlertsLink);
+        return new AlertJSPage(driver);
+    }
+
 }

@@ -14,6 +14,7 @@ public class Base {
     @BeforeClass
     public void setup() {
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.get("https://the-internet.herokuapp.com/");
         driver.manage().window().maximize();
     }
