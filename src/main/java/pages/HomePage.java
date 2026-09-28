@@ -15,6 +15,7 @@ public class HomePage {
     private final By forgetPasswordLink = By.linkText("Forgot Password");
     private final By checkBoxesLink = By.linkText("Checkboxes");
     private final By dynamicLoadingLink = By.partialLinkText("Loading");
+    private final By dropDownListLink=By.linkText("Dropdown");
 
     // Action
     public LoginPage clickOnFormAuthLink() {
@@ -35,5 +36,9 @@ public class HomePage {
     public DynamicLoadingPage clickOnDynamicLoadingLink() {
         driver.findElement(dynamicLoadingLink).click();
         return new DynamicLoadingPage(driver);
+    }
+    public DropDownPage clickOnDropDownLink(){
+        driver.findElement(dropDownListLink).click();
+        return new DropDownPage(driver);
     }
 }
