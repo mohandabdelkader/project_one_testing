@@ -19,6 +19,9 @@ public class HomePage {
     private final By statusCodeLink = By.linkText("Status Codes");
     private final By javascriptAlertsLink = By.cssSelector("a[href='/javascript_alerts']");
     private final By iframeLink = By.linkText("WYSIWYG Editor");
+    private final By horizontalSliderLink = By.linkText("Horizontal Slider");
+    private final By inputsLink = By.linkText("Inputs");
+    private final By fileUploadLink = By.linkText("File Upload");
 
     // Action
 
@@ -65,6 +68,21 @@ public class HomePage {
     public IframePage clickOnIframeLink() {
         clickOnLink(iframeLink);
         return new IframePage(driver);
+    }
+
+    public HorizontalSliderPage clickOnHorizontalSliderLink() {
+        clickOnLink(horizontalSliderLink);
+        return new HorizontalSliderPage(driver);
+    }
+
+    public InputsPage clickOnInputsLink() {
+        clickOnLink(inputsLink);
+        return new InputsPage(driver);
+    }
+
+    public UploadFilePage clickOnFileUploadLink() {
+        clickOnLink(fileUploadLink);
+        return new UploadFilePage(driver);
     }
 
 }
