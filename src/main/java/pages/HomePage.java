@@ -22,6 +22,8 @@ public class HomePage {
     private final By horizontalSliderLink = By.linkText("Horizontal Slider");
     private final By inputsLink = By.linkText("Inputs");
     private final By fileUploadLink = By.linkText("File Upload");
+    private final By hoversLink = By.linkText("Hovers");
+    private final By multipleWindowsLink = By.linkText("Multiple Windows");
 
     // Action
 
@@ -83,6 +85,16 @@ public class HomePage {
     public UploadFilePage clickOnFileUploadLink() {
         clickOnLink(fileUploadLink);
         return new UploadFilePage(driver);
+    }
+
+    public HoversPage clickOnHoversLink() {
+        clickOnLink(hoversLink);
+        return new HoversPage(driver);
+    }
+
+    public MultipleWindowsPage clickOnMultipleWindows() {
+        clickOnLink(multipleWindowsLink);
+        return new MultipleWindowsPage(driver);
     }
 
 }
